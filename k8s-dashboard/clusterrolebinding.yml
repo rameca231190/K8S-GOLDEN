@@ -1,0 +1,13 @@
+#Use the clusterrole binding to bind your clusterrole and  service account together, (before you need to create clustrole and service account)
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: mike
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: aggregate-cron-tabs-edit
+subjects:
+- kind: ServiceAccount
+  name: mike
+  namespace: kube-system

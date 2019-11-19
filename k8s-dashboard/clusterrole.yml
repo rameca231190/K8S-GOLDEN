@@ -1,0 +1,14 @@
+# This clster tole as an example to granting access for you k8s dashboard over your service account.
+# You can specify your own verbs and resources which you want to be able accessed by tehe dashboard 
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  namespace: kube-system
+  name: aggregate-cron-tabs-edit
+  labels:
+    rbac.authorization.k8s.io/aggregate-to-admin: "true"
+    rbac.authorization.k8s.io/aggregate-to-edit: "true"
+rules:
+- apiGroups: [""]
+  resources: ["*"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
