@@ -1,0 +1,6 @@
+#you can specify your own service account and namespace where to create it
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-roman
+  namespace: kube-system
