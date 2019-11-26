@@ -19,3 +19,9 @@ kubectl create namespace kubeapps
 Run this command to install dashboard
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
 
+Metrix related papckage:
+Run
+helm upgrade --install metrics stable/metrics-server --namespace kube-system
+Or
+kubectl create -f https://raw.githubusercontent.com/kubernetes/kops/master/addons/monitoring-standalone/v1.7.0.yaml
+
