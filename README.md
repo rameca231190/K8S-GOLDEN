@@ -25,3 +25,7 @@ helm upgrade --install metrics stable/metrics-server --namespace kube-system
 Or
 kubectl create -f https://raw.githubusercontent.com/kubernetes/kops/master/addons/monitoring-standalone/v1.7.0.yaml
 
+Authenticate your machine to the private registery:
+docker login -u admin -p admin123 your-repo:8082
+docker login -u admin -p admin123 your-repo:8083
+This will create an entry in ~/.docker/config.json:
