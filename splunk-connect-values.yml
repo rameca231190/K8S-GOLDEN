@@ -1,0 +1,45 @@
+# This is an example of using insecure configurations
+global:
+  splunk:
+    hec:
+      token: 57559dfa-0aa5-44cb-86a1-4b1aa2e9f7eb
+      host: 172.23.167.27
+      port: 8088
+      protocol: http
+      # connection to splunk is insecure
+      insecureSSL: true
+  kubernetes:
+    clusterName: "local"
+
+splunk-kubernetes-objects:
+  # RBAC is disabled
+  rbac:
+    create: false
+  splunk:
+    hec: 
+      indexName: kube-objects 
+  kubernetes:
+      # connection to kubernetes is insecure
+      insecureSSL: true
+      
+    
+splunk-kubernetes-metrics:
+  # RBAC is disabled
+  rbac:
+    create: false
+
+  # do not create service account
+  serviceAccount:
+    create: false
+
+  splunk:
+    hec:
+      indexName: metrics
+splunk-kubernetes-logging: 
+  rbac: 
+    create: false
+  serviceAccount:
+    create: false
+  splunk: 
+    hec:
+      indexName: app
