@@ -2,9 +2,9 @@
 global:
   splunk:
     hec:
-      token: 57559dfa-0aa5-44cb-86a1-4b1aa2e9f7eb
-      host: 172.23.167.27
-      port: 8088
+      token: 1BB80655-EC68-463E-918D-6DD0705EB6A9
+      host: 172.29.194.58
+      port: 31337
       protocol: http
       # connection to splunk is insecure
       insecureSSL: true
@@ -34,7 +34,7 @@ splunk-kubernetes-metrics:
 
   splunk:
     hec:
-      indexName: metrics
+      indexName: main
 splunk-kubernetes-logging: 
   rbac: 
     create: false

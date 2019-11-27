@@ -1,0 +1,55 @@
+# This is an example of using insecure configurations
+global:
+  splunk:
+    hec:
+      token: DD238C98-9607-4BE6-B022-8CF8F2D81DD9
+      host: 172.29.194.58
+      port: 31337
+      protocol: http
+
+#local config for logging chart
+splunk-kubernetes-logging:
+  journalLogPath: /run/log/journal
+  splunk:
+    hec:
+      indexName: app
+#local config for objects chart
+splunk-kubernetes-objects:
+  rbac:
+    create: true
+  serviceAccount:
+    create: true
+    name: splunk-kubernetes-objects
+  kubernetes:
+    insecureSSL: true
+  objects:
+    core:
+      v1:
+        - name: pods
+        - name: namespaces
+        - name: nodes
+        - name: services
+        - name: config_maps
+        - name: secrets
+        - name: persistent_volumes
+        - name: service_accounts
+        - name: persistent_volume_claims
+        - name: resource_quotas
+        - name: components_statuses
+        - name: events
+        - name: watch
+    apps:
+      v1:
+        - name: deployments
+        - name: daemon_sets
+        - name: replica_sets
+        - name: stateful_sets
+  splunk:
+    heck:
+      indexName: banan
+#local config for metrics chart
+splunk-kubernetes-metrics:
+  rbac:
+    create: true
+  serviceAccount:
+
