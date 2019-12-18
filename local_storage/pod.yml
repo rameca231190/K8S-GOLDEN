@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: harry
+spec:
+  volumes:
+    - name: harry
+      persistentVolumeClaim:
+        claimName: harry
+  containers:
+    - name: harry
+      image: nginx
+      ports:
+        - containerPort: 80
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/mnt/peer"
+          name: harry
+
