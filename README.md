@@ -1,3 +1,10 @@
+# Cheet-sheet
+The correct command for SA is:
+kubectl auth can-i <verb> <resource> --as=system:serviceaccount:<namespace>:<serviceaccountname> [-n <namespace>]
+
+Command for users:
+k auth can-i update pods --as=ltt-dev-deployer
+
 # K8S-GOLDEN
 
 Helm installation:
