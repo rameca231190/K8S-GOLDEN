@@ -4,6 +4,8 @@ kubectl auth can-i <verb> <resource> --as=system:serviceaccount:<namespace>:<ser
 
 Command for users:
 k auth can-i update pods --as=ltt-dev-deployer
+usefull link with info of authentication:
+https://docs.giantswarm.io/guides/securing-with-rbac-and-psp/#verifying-if-you-have-access
 
 # K8S-GOLDEN
 
